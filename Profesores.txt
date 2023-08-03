@@ -1,2 +1,3 @@
-Jose Perez,Matematica
-Hugo Diaz,Historia
+Jose Perez,Matematica,4,a
+Hugo Diaz,Historia,3,b
+Bernabe suarez,musica,6,c

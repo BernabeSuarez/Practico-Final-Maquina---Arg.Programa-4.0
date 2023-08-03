@@ -59,8 +59,37 @@ for item in inscriptos:
         data[0], data[1], data[2], data[3], data[4], data[5], data[6]
     )
 # autenticacion de usuario
+if user in encar_auth_list.keys() and user in prof_auth_list.keys():
+    print(
+        "Usted figura como Profesor y como encargado, por favor seleccione una opcion:"
+    )
+    print("1. Profesor")
+    print("2. Encargado")
+    op = int(input("Ingrese su eleccion: "))
+    if op == 1:
+        materia = input("Ingrese la materia que dicta: ")
+        if materia in prof_auth_list.values():
+            print("")
+            print("Usuario Profesor autenticado")
+            print("")
+            Profesores.menu_profesores(inscripciones)
+            salir()
+        else:
+            print("La materia no corresponde al profesor")
+            print("")
+    elif op == 2:
+        dni = input("Ingrese su DNI(sin puntos): ")
+        if dni in encar_auth_list.values():
+            print("")
+            print("Usuario Encargado autenticado")
+            print("")
+            # llamar a la funcion del menu encargado
+            Encargado.menu_encargado(inscripciones)
+            salir()
+        else:
+            print("DNI no coincide con el registrado para este Usuario.")
 
-if user in encar_auth_list.keys():
+elif user in encar_auth_list.keys():
     dni = input("Ingrese su DNI(sin puntos): ")
     if dni in encar_auth_list.values():
         print("")
@@ -82,5 +111,6 @@ elif user in prof_auth_list.keys():
     else:
         print("La materia no corresponde al profesor")
         print("")
+
 else:
     print("Usuario incorrecto")

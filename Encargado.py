@@ -100,9 +100,11 @@ def menu_encargado(inscripciones):
     sel = 1
     while sel != 0:
         print("Seleccione que accion desea realizar:")
-        print("1. Realizar la iscripcion de alumnos")
-        print("2. Modificar la iscripcion de alumnos")
+        print("")
+        print("1. Realizar la inscripcion de alumnos")
+        print("2. Modificar la inscripcion de alumnos")
         print("3. Salir")
+        print("")
 
         opcionMenu = int(input("Ingrese una opcion: "))
         sel = opcionMenu
