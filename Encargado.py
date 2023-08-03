@@ -2,6 +2,18 @@ import TDA_Encargado
 import TDA_Inscripciones
 
 
+def sobreescribir_inscripciones(inscripciones, data_a_modificar, alumno):
+    inscripciones[alumno] = data_a_modificar
+    new_file = list(inscripciones.values())
+    archivo = open("Inscripciones.txt", "w")
+    for item in new_file:
+        data = list(item.values())
+        inscripcion_personal = ",".join(data)
+        archivo.write(inscripcion_personal)
+        archivo.write("\n")
+    archivo.close()
+
+
 def inscribir():
     fecha = input("Ingrese la fecha del examen(dd/mm/aa): ")
     nombre = input("Ingrese el nombre y apellido del alumno: ")
@@ -19,7 +31,7 @@ def inscribir():
     listaInsc.close()
 
 
-def modificar(data_a_modificar):
+def modificar(inscripciones, data_a_modificar, alumno):
     print("Que desea modificar?")
     print("")
     print("1. Fecha del examen.")
@@ -49,10 +61,8 @@ def modificar(data_a_modificar):
         new_division = input("Ingrese la division del curso: ")
         TDA_Inscripciones.modMateria(data_a_modificar, new_division)
         print("La division fue actualizada correctamente")
-    new_data = data_a_modificar.values()
-    f = open("Inscripciones.txt")
-    f.writelines(new_data)
-    f.close()
+
+    sobreescribir_inscripciones(inscripciones, data_a_modificar, alumno)
 
 
 def menuModificar(inscripciones):
@@ -62,7 +72,7 @@ def menuModificar(inscripciones):
         data_a_modificar = inscripciones[alumno]
         seguir = True
         while seguir == True:
-            modificar(data_a_modificar)
+            modificar(inscripciones, data_a_modificar, alumno)
             print("Desea modificar otra cosa?")
             opcion = input("Ingrese Si o No:").lower()
             if opcion == "si":

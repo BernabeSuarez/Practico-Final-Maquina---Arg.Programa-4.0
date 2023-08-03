@@ -64,7 +64,6 @@ if user in encar_auth_list.keys():
     if dni in encar_auth_list.values():
         print("Usuario Encargado autenticado")
         # llamar a la funcion del menu encargado
-        print(inscripciones)
         Encargado.menu_encargado(inscripciones)
         salir()
     else:
