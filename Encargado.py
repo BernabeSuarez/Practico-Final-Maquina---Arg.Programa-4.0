@@ -109,7 +109,11 @@ def menu_encargado(inscripciones):
         opcionMenu = int(input("Ingrese una opcion: "))
         sel = opcionMenu
         if opcionMenu == 1:
-            inscribir()
+            try:
+                inscribir()
+                print("Inscripcion cargada con exito")
+            except:
+                print("No se pudo realizar la inscripcion,por favor intente mas tarde")
         elif opcionMenu == 2:
             try:
                 menuModificar(inscripciones)
