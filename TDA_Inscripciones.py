@@ -68,3 +68,20 @@ def getNota(inscripcion):
 
 def modNota(inscripcion, nota):
     inscripcion["nota"] = nota
+
+
+def modInscripcion(inscripciones, data_a_modificar, alumno):
+    inscripciones[alumno] = data_a_modificar
+    new_file = list(inscripciones.values())
+    return new_file
+
+
+def sobreescribir_inscripciones(inscripciones, data_a_modificar, alumno):
+    new_file = TDA_Inscripciones.modInscripcion(inscripciones, data_a_modificar, alumno)
+    archivo = open("Inscripciones.txt", "w")
+    for item in new_file:
+        data = list(item.values())
+        inscripcion_personal = ",".join(data)
+        archivo.write(inscripcion_personal)
+        archivo.write("\n")
+    archivo.close()

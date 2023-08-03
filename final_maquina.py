@@ -2,6 +2,7 @@ from os import system
 import TDA_Encargado
 import TDA_Inscripciones
 import Encargado
+import Profesores
 
 
 system("clear")
@@ -62,7 +63,9 @@ for item in inscriptos:
 if user in encar_auth_list.keys():
     dni = input("Ingrese su DNI(sin puntos): ")
     if dni in encar_auth_list.values():
+        print("")
         print("Usuario Encargado autenticado")
+        print("")
         # llamar a la funcion del menu encargado
         Encargado.menu_encargado(inscripciones)
         salir()
@@ -71,7 +74,11 @@ if user in encar_auth_list.keys():
 elif user in prof_auth_list.keys():
     materia = input("Ingrese la materia que dicta: ")
     if materia in prof_auth_list.values():
-        print("Usuario Profesor autenticado")  # llamar a la funcion del menu encargado
+        print("")
+        print("Usuario Profesor autenticado")
+        print("")
+        Profesores.menu_profesores(inscripciones)
+        salir()
     else:
         print("La materia no corresponde al profesor")
         print("")

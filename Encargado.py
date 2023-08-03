@@ -3,8 +3,7 @@ import TDA_Inscripciones
 
 
 def sobreescribir_inscripciones(inscripciones, data_a_modificar, alumno):
-    inscripciones[alumno] = data_a_modificar
-    new_file = list(inscripciones.values())
+    new_file = TDA_Inscripciones.modInscripcion(inscripciones, data_a_modificar, alumno)
     archivo = open("Inscripciones.txt", "w")
     for item in new_file:
         data = list(item.values())
@@ -45,22 +44,31 @@ def modificar(inscripciones, data_a_modificar, alumno):
         new_fecha = input("Ingrese la fecha nueva: ")
         TDA_Inscripciones.modFecha(data_a_modificar, new_fecha)
         print("La fecha fue actualizada correctamente")
+        print("")
+
     elif int(opcion_mod) == 2:
         new_materia = input("Ingrese la materia: ")
         TDA_Inscripciones.modMateria(data_a_modificar, new_materia)
         print("La materia fue actualizada correctamente")
+        print("")
+
     elif int(opcion_mod) == 3:
         new_profesor = input("Ingrese la nombre del profesor: ")
         TDA_Inscripciones.modMateria(data_a_modificar, new_profesor)
         print("El profesor fue actualizado correctamente")
+        print("")
+
     elif int(opcion_mod) == 4:
         new_curso = input("Ingrese el curso: ")
         TDA_Inscripciones.modMateria(data_a_modificar, new_curso)
         print("El curso fue actualizado correctamente")
+        print("")
+
     elif int(opcion_mod) == 5:
         new_division = input("Ingrese la division del curso: ")
         TDA_Inscripciones.modMateria(data_a_modificar, new_division)
         print("La division fue actualizada correctamente")
+        print("")
 
     sobreescribir_inscripciones(inscripciones, data_a_modificar, alumno)
 
@@ -74,7 +82,7 @@ def menuModificar(inscripciones):
         while seguir == True:
             modificar(inscripciones, data_a_modificar, alumno)
             print("Desea modificar otra cosa?")
-            opcion = input("Ingrese Si o No:").lower()
+            opcion = input("Ingrese Si o No: ").lower()
             if opcion == "si":
                 seguir = True
             elif opcion == "no":
