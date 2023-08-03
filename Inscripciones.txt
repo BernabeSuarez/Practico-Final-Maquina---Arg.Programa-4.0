@@ -1,0 +1,4 @@
+3/04/23,Juan Perez,Educacion Tecnologica,Humberto Fidalgo,4,A,-1
+3/04/23,Carlos Quiroga,Geografia,Felipe Nievas,3,A,-1
+8/04/23,Juan Perez,Educacion Tecnologica,Humberto Fidalgo,4,A,-1
+12/09/2023,Lautaro Suarez,Matematica,Se�orita maestra,4,d,-1
