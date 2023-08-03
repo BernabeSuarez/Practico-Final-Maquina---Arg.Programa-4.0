@@ -53,6 +53,7 @@ for item in profesores:
     prof_auth_list[data[0].lower()] = data[1].lower()
 
 # generar un diccionario de las Inscripciones
+
 for item in inscriptos:
     data = item.split(",")
     inscripciones[data[1].lower()] = TDA_Inscripciones.inscribir(
@@ -67,7 +68,7 @@ if user in encar_auth_list.keys() and user in prof_auth_list.keys():
     print("2. Encargado")
     op = int(input("Ingrese su eleccion: "))
     if op == 1:
-        materia = input("Ingrese la materia que dicta: ")
+        materia = input("Ingrese la materia que dicta: ").lower()
         if materia in prof_auth_list.values():
             print("")
             print("Usuario Profesor autenticado")
