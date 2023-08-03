@@ -1,12 +1,15 @@
+<center>
+
 # Practico Final Maquina
 
 ## Argentina Programa 4.0
 
-### Universidad Nacional de San Luis
+## Universidad Nacional de San Luis
+</center>
 
-### Sistema de Inscripción a Exámenes
+## Sistema de Inscripción a Exámenes
 
-## Narrativa
+### Narrativa
 
 Una institución educativa de nivel medio requiere automatizar las inscripciones de los alumnos que
 tienen que rendir materias previas, libres y equivalencias. Los exámenes están dirigidos a aquellos
