@@ -1,10 +1,10 @@
-# H1 Universidad Nacional de San Luis
+# Universidad Nacional de San Luis
 
-## H2 Argentina Programa
+## Argentina Programa
 
-### H3 Sistema de Inscripción a Exámenes
+### Sistema de Inscripción a Exámenes
 
-## H2 Narrativa
+## Narrativa
 
 Una institución educativa de nivel medio requiere automatizar las inscripciones de los alumnos que
 tienen que rendir materias previas, libres y equivalencias. Los exámenes están dirigidos a aquellos
@@ -26,7 +26,7 @@ Luego de explicada la realidad se pide construir un sistema que permita:
 2. Que el profesor cargue las notas de los estudiantes que rindieron el examen de la/s materia/s
    que dicta.
 
-### H3 Características del Sistema
+### Características del Sistema
 
 3. Solo los profesores y encargados institucionales pueden acceder al sistema. El ingreso se
    realiza de la siguiente manera:
