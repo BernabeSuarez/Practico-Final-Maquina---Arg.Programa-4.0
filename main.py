@@ -56,6 +56,7 @@ def main():
         inscripciones[data[1].lower()] = TDA_Inscripciones.inscribir(
             data[0], data[1], data[2], data[3], data[4], data[5], data[6]
         )
+
     # autenticacion de usuario
     if user in encar_auth_list.keys() and user in prof_auth_list.keys():
         print(

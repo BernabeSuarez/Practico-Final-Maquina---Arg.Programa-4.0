@@ -1,0 +1,18 @@
+Practico Final Maquina
+
+Este proyecto fue realizado sobre el sistema opertivo Windows.
+para desarrollar el proyecto utilize Visual Studio Code como editor de texto
+
+Los archivos Profesores.txt, Encargados.txt e Inscripciones.txt que estan en la carpeta contienen la informacion para acceder al sistema,autenticarse como Encargado o Profesor.
+el archivo Inscripciones.txt contiene una pequeña lista de inscriptos, que se puede agrandar inscribiendo mas alumnos desde el usuario encargado,
+este puede inscribir un alumno, o modificar una inscripcion de un alumno.
+el perfil del profesor, puede agregar nota(por defecto cada inscripcion cuenta con nota -1)
+o segun sea el caso modificar la nota de un alumno.
+
+No estan considerados los acentos en las inscripciones, ni en los archivos de encargados o profesores.
+no hice una validacion de fechas, por lo que se podria inscribir cualquier fecha, aunque haya pasado, lo ideal sera obtener la fecha actual y no permitir ingresar una fecha anterior a la actual pero se me extendia mucho en cosas que la actividad no pedia.
+
+Al entrar a la aplicacion pide nombre de usuario, segun el nombre busca si es encargado o profesor, y pide una valdacion para cada caso, en el caso que un porfesor tambien sea encargado, le pide que escoja como acceder dependiendo de lo que quiera hacer si cargar una inscripcion o cargar una nota, debera escoger ingresar de unj modo u otro.
+
+por defecto la aplicacion arrancas con una lista de 3 inscriptos, 3 profesores y 3 encargados
+
