@@ -96,34 +96,46 @@ def menuModificar(inscripciones):
         print("")
 
 
-def menu_encargado(inscripciones):
-    sel = 1
-    while sel != 0:
-        print("Seleccione que accion desea realizar:")
+def menu_encargado():
+    inscripciones = TDA_Inscripciones.getInsctipciones()
+    if len(inscripciones) < 1:
+        print("No existen inscripciones, por favor realize una inscripcion.")
         print("")
-        print("1. Realizar la inscripcion de alumnos")
-        print("2. Modificar la inscripcion de alumnos")
-        print("3. Salir")
-        print("")
-
-        opcionMenu = int(input("Ingrese una opcion: "))
-        sel = opcionMenu
-        if opcionMenu == 1:
-            try:
-                inscribir()
-                print("Inscripcion cargada con exito")
-            except:
-                print("No se pudo realizar la inscripcion,por favor intente mas tarde")
-        elif opcionMenu == 2:
-            try:
-                menuModificar(inscripciones)
-                print("Inscripcion modificada con exito")
-                print("")
-            except:
-                print("No se pudo realizar la modificacion, intente nuevamente")
-                print("")
-        elif opcionMenu == 3:
-            break
-        else:
-            print("Ingrese una opcion correcta")
+        try:
+            inscribir()
+            print("Inscripcion cargada con exito")
+        except:
+            print("No se pudo realizar la inscripcion,por favor intente mas tarde")
+    else:
+        sel = 1
+        while sel != 0:
+            print("Seleccione que accion desea realizar:")
             print("")
+            print("1. Realizar la inscripcion de alumnos")
+            print("2. Modificar la inscripcion de alumnos")
+            print("3. Salir")
+            print("")
+
+            opcionMenu = int(input("Ingrese una opcion: "))
+            sel = opcionMenu
+            if opcionMenu == 1:
+                try:
+                    inscribir()
+                    print("Inscripcion cargada con exito")
+                except:
+                    print(
+                        "No se pudo realizar la inscripcion,por favor intente mas tarde"
+                    )
+            elif opcionMenu == 2:
+                try:
+                    menuModificar(inscripciones)
+                    print("Inscripcion modificada con exito")
+                    print("")
+                except:
+                    print("No se pudo realizar la modificacion, intente nuevamente")
+                    print("")
+            elif opcionMenu == 3:
+                break
+            else:
+                print("Ingrese una opcion correcta")
+                print("")

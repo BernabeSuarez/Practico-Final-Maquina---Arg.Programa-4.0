@@ -53,34 +53,43 @@ def menuModificarNota(inscripciones):
         print("")
 
 
-def menu_profesores(inscripciones):
-    sel = 1
-    while sel != 0:
-        print("Seleccione que accion desea realizar:")
+def menu_profesores():
+    inscripciones = TDA_Inscripciones.getInsctipciones()
+    if len(inscripciones) < 1:
         print("")
-        print("1. Cargar nota del alumno")
-        print("2. Modificar nota de alumno")
-        print("3. Salir")
+        print(
+            "No existen Inscripciones realizadas, por favor contacte a un encargado que realize las inscripciones"
+        )
         print("")
 
-        opcionMenu = int(input("Ingrese una opcion: "))
-        sel = opcionMenu
-        if opcionMenu == 1:
-            try:
-                cargarNota(inscripciones)
-                print("")
-            except:
-                print("No se pudo cargar la nota, por favor, intente nuevamente")
-                print("")
-        elif opcionMenu == 2:
-            try:
-                menuModificarNota(inscripciones)
-                print("")
-            except:
-                print("No se pudo realizar la modificacion, intente nuevamente")
-                print("")
-        elif opcionMenu == 3:
-            break
-        else:
-            print("Ingrese una opcion correcta")
+    else:
+        sel = 1
+        while sel != 0:
+            print("Seleccione que accion desea realizar:")
             print("")
+            print("1. Cargar nota del alumno")
+            print("2. Modificar nota de alumno")
+            print("3. Salir")
+            print("")
+
+            opcionMenu = int(input("Ingrese una opcion: "))
+            sel = opcionMenu
+            if opcionMenu == 1:
+                try:
+                    cargarNota(inscripciones)
+                    print("")
+                except:
+                    print("No se pudo cargar la nota, por favor, intente nuevamente")
+                    print("")
+            elif opcionMenu == 2:
+                try:
+                    menuModificarNota(inscripciones)
+                    print("")
+                except:
+                    print("No se pudo realizar la modificacion, intente nuevamente")
+                    print("")
+            elif opcionMenu == 3:
+                break
+            else:
+                print("Ingrese una opcion correcta")
+                print("")

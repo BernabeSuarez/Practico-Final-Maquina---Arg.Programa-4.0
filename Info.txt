@@ -14,6 +14,6 @@ no hice una validacion de fechas, por lo que se podria inscribir cualquier fecha
 
 Al entrar a la aplicacion pide nombre de usuario, segun el nombre busca si es encargado o profesor, y pide una valdacion para cada caso, en el caso que un porfesor tambien sea encargado, le pide que escoja como acceder dependiendo de lo que quiera hacer si cargar una inscripcion o cargar una nota, debera escoger ingresar de unj modo u otro.
 
-por defecto la aplicacion arrancas con una lista de 3 profesores , 3 encargados yuna listya con un inscripto, porque tengo que solucionar el error de arrancar el programa con una lista de inscripcion vacia, o crearla despues
+por defecto la aplicacion arrancas con una lista de 3 profesores , 3 encargados, y al arrancar el programa se crea un archivo Inscripciones.txt vacio
 
 

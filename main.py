@@ -23,21 +23,19 @@ def main():
     # abrir los archivos de textos
     encarg_file = open("Encargados.txt", "r")
     profe_file = open("Profesores.txt", "r")
-    insc_file = open("Inscripciones.txt", "r")
+    create_file = open("Inscripciones.txt", "w")
+    create_file.close()
 
     # guardar la info de los archivos
     encargados = encarg_file.read().split("\n")
     profesores = profe_file.read().rstrip().split("\n")
-    inscriptos = insc_file.read().rstrip().split("\n")
 
     # cerrar los archivos de texto
     encarg_file.close()
     profe_file.close()
-    insc_file.close()
 
     encar_auth_list = {}
     prof_auth_list = {}
-    inscripciones = {}
 
     # generar un diccionario de los encargados
     for item in encargados:
@@ -48,14 +46,6 @@ def main():
     for item in profesores:
         data = item.split(",")
         prof_auth_list[data[0].lower()] = data[1].lower()
-
-    # generar un diccionario de las Inscripciones
-
-    for item in inscriptos:
-        data = item.split(",")
-        inscripciones[data[1].lower()] = TDA_Inscripciones.inscribir(
-            data[0], data[1], data[2], data[3], data[4], data[5], data[6]
-        )
 
     # autenticacion de usuario
     if user in encar_auth_list.keys() and user in prof_auth_list.keys():
@@ -71,7 +61,7 @@ def main():
                 print("")
                 print("Usuario Profesor autenticado")
                 print("")
-                Profesores.menu_profesores(inscripciones)
+                Profesores.menu_profesores()
                 salir()
             else:
                 print("La materia no corresponde al profesor")
@@ -83,7 +73,7 @@ def main():
                 print("Usuario Encargado autenticado")
                 print("")
                 # llamar a la funcion del menu encargado
-                Encargado.menu_encargado(inscripciones)
+                Encargado.menu_encargado()
                 salir()
             else:
                 print("DNI no coincide con el registrado para este Usuario.")
@@ -95,7 +85,7 @@ def main():
             print("Usuario Encargado autenticado")
             print("")
             # llamar a la funcion del menu encargado
-            Encargado.menu_encargado(inscripciones)
+            Encargado.menu_encargado()
             salir()
         else:
             print("DNI no coincide con el registrado para este Usuario.")
@@ -105,7 +95,7 @@ def main():
             print("")
             print("Usuario Profesor autenticado")
             print("")
-            Profesores.menu_profesores(inscripciones)
+            Profesores.menu_profesores()
             salir()
         else:
             print("La materia no corresponde al profesor")

@@ -77,7 +77,7 @@ def modInscripcion(inscripciones, data_a_modificar, alumno):
 
 
 def sobreescribir_inscripciones(inscripciones, data_a_modificar, alumno):
-    new_file = TDA_Inscripciones.modInscripcion(inscripciones, data_a_modificar, alumno)
+    new_file = modInscripcion(inscripciones, data_a_modificar, alumno)
     archivo = open("Inscripciones.txt", "w")
     for item in new_file:
         data = list(item.values())
@@ -85,3 +85,20 @@ def sobreescribir_inscripciones(inscripciones, data_a_modificar, alumno):
         archivo.write(inscripcion_personal)
         archivo.write("\n")
     archivo.close()
+
+
+def getInsctipciones():
+    inscripciones = {}
+    with open("Inscripciones.txt", "r") as f:
+        inscriptos = f.read()
+        if inscriptos == "":
+            print("Ha ocurrido un error")
+
+        else:
+            inscriptos.rstrip().split("\n")
+            for item in inscriptos:
+                data = item.split(",")
+                inscripciones[data[1].lower()] = inscribir(
+                    data[0], data[1], data[2], data[3], data[4], data[5], data[6]
+                )
+    return inscripciones
